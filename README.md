@@ -1,2 +1,5 @@
 # NodeJS_Blog
-Simple Blog To write articles and edit and delete them
+
+Simple Blog site To write articles and edit and delete them.
+
+use NodeJs and MongoDB
