@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title> Blog
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-4">Blog articles</h1>
+        <a href="/articles/new" class="btn btn-success mt-2">New article</a>
+
+        <%articles.forEach(function(article){%>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="card-tilte">
+                    <%=article.title%>
+                </h4>
+                <div class="card-subtitle text-muted mb-2">
+                    <%=article.createdAt.toLocaleDateString()%>
+                </div>
+                <div class="card-text mb-2"> 
+                    <%=article.description%>
+                </div>
+                <a href="/articles/<%= article.id%>" class="btn btn-primary">Read More </a>
+
+                <form action="/articles/<%= article.id%>?_method=DELETE" method="POST" class="d-inline"> 
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+
+            </div>
+
+
+        </div>
+        <%})%>
+    </div>
+
+</body>
+
+</html>
